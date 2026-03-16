@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions - Walchand College of Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose:      #E06D77;
+  --rose-d:    #c85662;
+  --rose-m:    #e8909a;
+  --blush:     #F0D2D2;
+  --blush-l:   #f8eaea;
+  --blush-ll:  #fdf5f5;
+  --blush-lll: #fffafb;
+  --ink:       #1a2744;
+  --ink-m:     #2e3f6b;
+  --ink-s:     #4a5a82;
+  --ink-muted: #7a8aaa;
+  --white:     #ffffff;
+  --shadow-sm: 0 1px 4px rgba(224,109,119,.1);
+  --shadow:    0 4px 16px rgba(224,109,119,.15);
+  --radius:    9px;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html, body {
+  width:100%; min-height:100vh;
+  font-family:'Inter',sans-serif;
+  background:var(--blush-lll); color:var(--ink);
+}
+
+/* ══ PAGE GRID ══ */
+.page {
+  display:grid;
+  grid-template-rows: 56px 26px 1fr 50px 68px;
+  min-height:100vh;
+}
+
+/* ══ HEADER ══ */
+header {
+  background:var(--white);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 24px;
+  border-bottom:2px solid var(--blush);
+  box-shadow:0 2px 14px rgba(224,109,119,.1); z-index:100;
+}
+.logo-group { display:flex; align-items:center; gap:10px; }
+.logo-group img { height:38px; width:auto; }
+.logo-text strong {
+  display:block; font-family:'Poppins',sans-serif;
+  font-size:12px; font-weight:800; color:var(--rose-d); letter-spacing:.04em;
+}
+.logo-text span { font-size:9.5px; color:var(--ink-muted); font-weight:500; }
+nav { display:flex; align-items:center; gap:2px; }
+nav a {
+  font-size:11.5px; font-weight:600; color:var(--ink-s);
+  padding:5px 10px; border-radius:6px; text-decoration:none;
+  transition:color .18s, background .18s;
+}
+nav a:hover { color:var(--rose-d); background:var(--blush-l); }
+nav a.active { color:var(--rose); font-weight:700; }
+.nav-apply {
+  margin-left:10px; padding:7px 18px;
+  background:var(--rose); color:var(--white);
+  border-radius:20px; font-size:11.5px; font-weight:700;
+  text-decoration:none; font-family:'Poppins',sans-serif;
+  box-shadow:0 3px 12px rgba(224,109,119,.4);
+  transition:transform .18s, background .18s, box-shadow .18s;
+}
+.nav-apply:hover { transform:translateY(-1px); background:var(--rose-d); box-shadow:0 5px 18px rgba(224,109,119,.55); }
+
+/* ══ TICKER ══ */
+.ticker {
+  background:var(--rose); display:flex; align-items:center; overflow:hidden;
+}
+.ticker-lbl {
+  background:var(--rose-d); color:var(--white);
+  font-size:9px; font-weight:800; letter-spacing:.12em;
+  padding:0 14px; height:100%; text-transform:uppercase;
+  display:flex; align-items:center; flex-shrink:0;
+  font-family:'Poppins',sans-serif;
+}
+.ticker-items { display:flex; animation: tick 50s linear infinite; }
+.ticker-item {
+  color:var(--white); font-size:11px; font-weight:600;
+  padding:0 24px; white-space:nowrap; flex-shrink:0;
+}
+@keyframes tick { 0% { transform:translateX(100vw); } 100% { transform:translateX(-100%); } }
+
+/* ══ MAIN CONTENT ══ */
+.content {
+  padding:40px 48px;
+  max-width:1200px; margin:0 auto;
+}
+
+/* ══ HERO SECTION ══ */
+.hero {
+  background:linear-gradient(135deg, #fff5f6 0%, #ffe8e8 100%);
+  border-radius:var(--radius); padding:48px; position:relative; overflow:hidden;
+  box-shadow:var(--shadow-sm); margin-bottom:40px;
+}
+.hero::before {
+  content:''; position:absolute; top:-50%; right:-10%; width:400px; height:400px;
+  background:radial-gradient(circle, rgba(224,109,119,.08) 0%, transparent 70%);
+  border-radius:50%;
+}
+.hero-content { position:relative; z-index:2; }
+.hero h1 {
+  font-family:'Poppins',sans-serif; font-size:36px; font-weight:800;
+  color:var(--rose-d); margin-bottom:16px; line-height:1.2;
+}
+.hero p { font-size:16px; color:var(--ink-s); line-height:1.8; }
+
+/* ══ SECTIONS ══ */
+.section {
+  margin-bottom:48px;
+}
+.section h2 {
+  font-family:'Poppins',sans-serif; font-size:24px; font-weight:800;
+  color:var(--ink); margin-bottom:24px; text-transform:uppercase;
+  letter-spacing:.04em; position:relative; padding-bottom:16px;
+}
+.section h2::after {
+  content:''; position:absolute; bottom:0; left:0; width:60px; height:4px;
+  background:var(--rose); border-radius:2px;
+}
+.section p {
+  font-size:15px; line-height:1.8; color:var(--ink-s); margin-bottom:16px;
+}
+
+/* ══ CARDS GRID ══ */
+.cards-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;
+  margin-top:24px;
+}
+.card {
+  background:var(--white); border-radius:12px; padding:28px;
+  box-shadow:var(--shadow-sm); transition:all .18s;
+  border-left:4px solid var(--rose);
+}
+.card:hover {
+  transform:translateY(-4px); box-shadow:var(--shadow);
+}
+.card-icon {
+  font-size:32px; margin-bottom:16px; display:block;
+}
+.card h3 {
+  font-family:'Poppins',sans-serif; font-size:16px; font-weight:700;
+  color:var(--ink); margin-bottom:12px;
+}
+.card p {
+  font-size:13px; color:var(--ink-s); line-height:1.6; margin:0;
+}
+
+/* ══ ELIGIBILITY LIST ══ */
+.checklist {
+  background:var(--white); border-radius:12px; padding:28px;
+  box-shadow:var(--shadow-sm);
+}
+.checklist h3 {
+  font-family:'Poppins',sans-serif; font-size:16px; font-weight:700;
+  color:var(--ink); margin-bottom:20px;
+  padding-bottom:12px; border-bottom:2px solid var(--blush);
+}
+.check-item {
+  display:flex; align-items:flex-start; gap:12px; margin-bottom:16px;
+  padding:12px; border-radius:8px; background:var(--blush-lll);
+}
+.check-icon {
+  color:var(--rose); font-weight:800; font-size:18px; flex-shrink:0;
+}
+.check-text {
+  font-size:13px; color:var(--ink-s); line-height:1.6;
+}
+
+/* ══ CTA BUTTON ══ */
+.cta-btn {
+  display:inline-block; background:var(--rose); color:var(--white);
+  padding:14px 32px; border-radius:24px; font-weight:700; font-size:14px;
+  text-decoration:none; transition:transform .18s, box-shadow .18s;
+  box-shadow:0 4px 16px rgba(224,109,119,.3);
+  font-family:'Poppins',sans-serif;
+  border:none; cursor:pointer;
+}
+.cta-btn:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(224,109,119,.4); }
+
+/* ══ BOTTOM NAV ══ */
+.bottom-nav {
+  background:var(--white); border-top:2px solid var(--blush);
+  display:flex; align-items:center; padding:0 48px; gap:8px;
+  font-size:11px; color:var(--ink-muted);
+  height:50px;
+}
+.bottom-nav a {
+  color:var(--ink-s); text-decoration:none; font-weight:600;
+  padding:5px 12px; border-radius:4px; transition:color .18s;
+}
+.bottom-nav a:hover { color:var(--rose-d); }
+
+/* ══ FOOTER ══ */
+footer {
+  background:var(--ink); color:var(--white); padding:24px 48px;
+  font-size:11px; display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:16px; font-weight:500;
+}
+.f-copy { order:3; flex-basis:100%; text-align:center; margin-top:12px; opacity:.8; }
+.f-brand { display:flex; align-items:center; gap:10px; }
+.f-brand img { height:32px; width:auto; }
+.f-brand-text strong { display:block; font-size:12px; font-weight:700; }
+.f-brand-text span { opacity:.8; }
+.f-sep { width:1px; height:20px; background:rgba(255,255,255,.2); }
+.f-links-group { display:flex; gap:16px; }
+.f-links-group a { color:rgba(255,255,255,.9); text-decoration:none; transition:color .18s; }
+.f-links-group a:hover { color:var(--rose); }
+.f-contact { display:flex; flex-direction:column; gap:4px; }
+.f-contact a { color:rgba(255,255,255,.9); text-decoration:none; }
+.f-socials { display:flex; gap:12px; }
+.soc-btn {
+  width:28px; height:28px; display:flex; align-items:center; justify-content:center;
+  background:rgba(255,255,255,.1); border-radius:6px; cursor:pointer;
+  transition:background .18s, transform .18s;
+}
+.soc-btn:hover { background:rgba(255,255,255,.2); transform:scale(1.1); }
+.soc-btn svg { width:16px; height:16px; }
+</style>
+</head>
+<body>
+<div class="page">
+<!-- HEADER -->
+<header>
+  <div class="logo-group">
+     <img src="wcelogo.png" alt="">
+    <div class="logo-text">
+      <strong>
+WALCHAND COLLEGE OF ENGINEERING, SANGLI</strong>
+      <span>Govt-Aided Autonomous Institute  ·  Affiliated to Shivaji University  ·  Est. 1947</span>
+    </div>
+  </div>
+  <nav>
+    <a href="wce_homepage(2).html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="departments.html">Departments</a>
+    <a href="admissions.html" class="active">Admissions</a>
+    <a href="research.html">Research</a>
+    <a href="contact.html">Contact</a>
+    <a href="placements.html">Placements</a>
+    <a href="#" class="nav-apply">Apply Now</a>
+  </nav>
+</header>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-lbl">📢 Updates</div>
+  <div class="ticker-items">
+    <div class="ticker-item">🎉 Admissions Open for 2024-25 | 📊 100% Placement Rate Achieved</div>
+    <div class="ticker-item">🎉 Admissions Open for 2024-25 | 📊 100% Placement Rate Achieved</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Admissions 2024-25</h1>
+      <p>Begin your engineering journey at WCE Sangli. We welcome talented students ready to embrace challenges, innovate, and transform the future through technology.</p>
+    </div>
+  </div>
+
+  <!-- PROGRAMS OFFERED -->
+  <div class="section">
+    <h2>Programs Offered</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">🎓</span>
+        <h3>B.E. (Bachelor of Engineering)</h3>
+        <p>4-year full-time undergraduate program offering specializations in 6 engineering disciplines with AICTE approval and NBA accreditation.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📚</span>
+        <h3>M.Tech (Master of Technology)</h3>
+        <p>2-year postgraduate program focusing on advanced research and specialization in various engineering fields for engineering graduates.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔬</span>
+        <h3>Ph.D. Programs</h3>
+        <p>Doctoral research programs in collaboration with renowned universities for advanced scientific research and innovation in engineering.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMISSION PROCESS -->
+  <div class="section">
+    <h2>Admission Process</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">📝</span>
+        <h3>Step 1: Check Eligibility</h3>
+        <p>Ensure you meet the academic and eligibility requirements for your chosen program before applying.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📋</span>
+        <h3>Step 2: Online Application</h3>
+        <p>Complete the online application form with your personal, academic, and contact information before the deadline.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">✅</span>
+        <h3>Step 3: Document Verification</h3>
+        <p>Submit original documents including certificates, mark sheets, and entrance exam scores for verification.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎯</span>
+        <h3>Step 4: Merit Selection</h3>
+        <p>Candidates are selected based on merit as per the respective state counseling process or direct admission.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📞</span>
+        <h3>Step 5: Confirmation</h3>
+        <p>Confirm your admission by paying the required fees and completing registration formalities.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎉</span>
+        <h3>Step 6: Orientation</h3>
+        <p>Participate in campus orientation program to familiarize yourself with campus life and academic culture.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ELIGIBILITY -->
+  <div class="section">
+    <h2>Eligibility Criteria</h2>
+    <div class="checklist">
+      <h3>Bachelor of Engineering (B.E.)</h3>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <div class="check-text">Passed 12th (HSC/Equivalent) with Physics, Chemistry, and Mathematics from recognized board</div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <div class="check-text">Minimum 50% aggregate marks in Physics, Chemistry, and Mathematics (45% for reserved categories)</div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <div class="check-text">Valid JEE Main/State CET score within the prescribed cutoff</div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <div class="check-text">Indian citizen or NRI/PIO as per AICTE regulations</div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <div class="check-text">Completed 17 years of age at the time of admission</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY DATES -->
+  <div class="section">
+    <h2>Important Dates</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">📅</span>
+        <h3>Application Opens</h3>
+        <p>June 1, 2024</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📅</span>
+        <h3>Application Deadline</h3>
+        <p>July 31, 2024</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📅</span>
+        <h3>Counseling Begins</h3>
+        <p>August 15, 2024</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📅</span>
+        <h3>Academic Year Starts</h3>
+        <p>September 1, 2024</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section" style="text-align: center;">
+    <button class="cta-btn" onclick="alert('Apply Now feature coming soon!')">Start Your Application Now</button>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <span>Mumbai • Delhi • Bangalore • Pune • Sangli</span>
+  <a href="#">NIRF Ranking</a>
+  <a href="#">Campus Virtual Tour</a>
+  <a href="#">News & Events</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="var(--rose)">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+    </svg>
+    <div class="f-brand-text">
+      <strong>WALCHAND COLLEGE OF ENGINEERING</strong>
+      <span>Vishrambag, Sangli – 416 415, Maharashtra</span>
+    </div>
+  </div>
+  <div class="f-sep"></div>
+  <div class="f-links-group">
+    <a href="about.html">About</a><a href="departments.html">Programmes</a><a href="admissions.html">Admissions</a>
+    <a href="placements.html">Placements</a><a href="research.html">Research</a><a href="#">Campus</a><a href="#">NIRF</a><a href="#">RTI</a>
+  </div>
+  <div class="f-sep"></div>
+  <div class="f-contact">
+    <span>📞 +91 233 230 0383</span>
+    <span>✉ <a href="mailto:info@wcemail.com">info@wcemail.com</a></span>
+  </div>
+  <div class="f-sep"></div>
+  <div class="f-socials">
+    <div class="soc-btn" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#1877F2"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.4V12h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .1 2 .1v2.3h-1.1c-1.1 0-1.4.7-1.4 1.3V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12"/></svg></div>
+    <div class="soc-btn" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#1DA1F2"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.6 8.6 0 0 1-2.73 1.05A4.28 4.28 0 0 0 11.7 9.4a12.1 12.1 0 0 1-8.8-4.46 4.28 4.28 0 0 0 1.33 5.71 4.2 4.2 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.2 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 4 3 8.6 8.6 0 0 1-5.3 1.83 12.1 12.1 0 0 0 8.29 3c7.55 0 11.68-6.25 11.68-11.68 0-.18 0-.35-.01-.53A8.3 8.3 0 0 0 22.46 6z"/></svg></div>
+    <div class="soc-btn" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg></div>
+    <div class="soc-btn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#0A66C2"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 21h4V9H3v12zM9 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H9V9z"/></svg></div>
+    <div class="soc-btn" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#FF0000"><path d="M23.5 6.2s-.2-1.6-.8-2.3c-.7-.8-1.5-.8-1.9-.9C18.1 2.8 12 2.8 12 2.8h0s-6.1 0-8.8.2c-.4.1-1.2.1-1.9.9-.6.7-.8 2.3-.8 2.3S.3 8 .3 9.7v1.6c0 1.7.2 3.5.2 3.5s.2 1.6.8 2.3c.7.8 1.6.7 2 .8 1.5.1 8.7.2 8.7.2s6.1 0 8.8-.2c.4-.1 1.2-.1 1.9-.9.6-.7.8-2.3.8-2.3s.2-1.7.2-3.5V9.7c0-1.7-.2-3.5-.2-3.5zM9.5 14.2V7.8l6.3 3.2-6.3 3.2z"/></svg></div>
+  </div>
+  <div class="f-copy">© 2026 WCE Sangli. All rights reserved.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "wce-chatbot-server",
+  "version": "1.0.0",
+  "description": "WCE Assistant - AI Chatbot powered by Google Gemini",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "chatbot",
+    "gemini",
+    "wce"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^0.7.0",
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathmesh0077/FET_project1.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/prathmesh0077/FET_project1/issues"
+  },
+  "homepage": "https://github.com/prathmesh0077/FET_project1#readme"
+}
