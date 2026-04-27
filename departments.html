@@ -3,482 +3,294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Departments - Walchand College of Engineering</title>
+<title>Departments – Walchand College of Engineering, Sangli</title>
+<meta name="description" content="Explore all engineering and technology departments at Walchand College of Engineering, Sangli – UG, PG, and PhD programmes across 15 departments.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --rose:      #E06D77;
-  --rose-d:    #c85662;
-  --rose-m:    #e8909a;
-  --blush:     #F0D2D2;
-  --blush-l:   #f8eaea;
-  --blush-ll:  #fdf5f5;
-  --blush-lll: #fffafb;
-  --ink:       #1a2744;
-  --ink-m:     #2e3f6b;
-  --ink-s:     #4a5a82;
-  --ink-muted: #7a8aaa;
+  --rose:      #0A3B7E;
+  --rose-d:    #051F47;
+  --rose-m:    #1556A0;
+  --blush:     #F5F5F5;
+  --blush-l:   #FAFAFA;
+  --blush-ll:  #F0F0F0;
+  --blush-lll: #FFFFFF;
+  --ink:       #000000;
+  --ink-m:     #1A1A1A;
+  --ink-s:     #333333;
+  --ink-muted: #666666;
   --white:     #ffffff;
-  --shadow-sm: 0 1px 4px rgba(224,109,119,.1);
-  --shadow:    0 4px 16px rgba(224,109,119,.15);
+  --shadow-sm: 0 1px 4px rgba(10,59,126,.08);
+  --shadow:    0 4px 16px rgba(10,59,126,.12);
   --radius:    9px;
 }
-
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html, body {
-  width:100%; min-height:100vh;
-  font-family:'Inter',sans-serif;
-  background:var(--blush-lll); color:var(--ink);
-}
+html, body { width:100%; font-family:'Inter',sans-serif; background:var(--blush-lll); color:var(--ink); }
 
-/* ══ PAGE GRID ══ */
-.page {
-  display:grid;
-  grid-template-rows: 56px 26px 1fr 50px 68px;
-  min-height:100vh;
-}
-
-/* ══ HEADER ══ */
 header {
-  background:var(--white);
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 24px;
-  border-bottom:2px solid var(--blush);
-  box-shadow:0 2px 14px rgba(224,109,119,.1); z-index:100;
+  background:var(--white); display:flex; align-items:center; justify-content:space-between;
+  padding:0 24px; height:56px; border-bottom:2px solid var(--blush);
+  box-shadow:0 2px 14px rgba(10,59,126,.1); z-index:100; position:sticky; top:0;
 }
-.logo-group { display:flex; align-items:center; gap:10px; }
+.logo-group { display:flex; align-items:center; gap:10px; text-decoration:none; }
 .logo-group img { height:38px; width:auto; }
-.logo-text strong {
-  display:block; font-family:'Poppins',sans-serif;
-  font-size:12px; font-weight:800; color:var(--rose-d); letter-spacing:.04em;
-}
+.logo-text strong { display:block; font-family:'Poppins',sans-serif; font-size:12px; font-weight:800; color:rgb(235,71,71); letter-spacing:.04em; }
 .logo-text span { font-size:9.5px; color:var(--ink-muted); font-weight:500; }
 nav { display:flex; align-items:center; gap:2px; }
-nav a {
-  font-size:11.5px; font-weight:600; color:var(--ink-s);
-  padding:5px 10px; border-radius:6px; text-decoration:none;
-  transition:color .18s, background .18s;
-}
+nav a { font-size:11.5px; font-weight:600; color:var(--ink-s); padding:5px 10px; border-radius:6px; text-decoration:none; transition:color .18s,background .18s; }
 nav a:hover { color:var(--rose-d); background:var(--blush-l); }
 nav a.active { color:var(--rose); font-weight:700; }
-.nav-apply {
-  margin-left:10px; padding:7px 18px;
-  background:var(--rose); color:var(--white);
-  border-radius:20px; font-size:11.5px; font-weight:700;
-  text-decoration:none; font-family:'Poppins',sans-serif;
-  box-shadow:0 3px 12px rgba(224,109,119,.4);
-  transition:transform .18s, background .18s, box-shadow .18s;
-}
-.nav-apply:hover { transform:translateY(-1px); background:var(--rose-d); box-shadow:0 5px 18px rgba(224,109,119,.55); }
+.nav-apply { margin-left:10px; padding:7px 18px; background:var(--rose); color:var(--white); border-radius:20px; font-size:11.5px; font-weight:700; text-decoration:none; font-family:'Poppins',sans-serif; box-shadow:0 3px 12px rgba(10,59,126,.3); transition:transform .18s,background .18s; }
+.nav-apply:hover { transform:translateY(-1px); background:var(--rose-d); }
 
-/* ══ TICKER ══ */
-.ticker {
-  background:var(--rose); display:flex; align-items:center; overflow:hidden;
-}
-.ticker-lbl {
-  background:var(--rose-d); color:var(--white);
-  font-size:9px; font-weight:800; letter-spacing:.12em;
-  padding:0 14px; height:100%; text-transform:uppercase;
-  display:flex; align-items:center; flex-shrink:0;
-  font-family:'Poppins',sans-serif;
-}
-.ticker-items { display:flex; animation: tick 50s linear infinite; }
-.ticker-item {
-  color:var(--white); font-size:11px; font-weight:600;
-  padding:0 24px; white-space:nowrap; flex-shrink:0;
-}
-@keyframes tick { 0% { transform:translateX(100vw); } 100% { transform:translateX(-100%); } }
+.ticker { background:var(--rose); display:flex; align-items:center; overflow:hidden; height:26px; }
+.ticker-lbl { background:var(--rose-d); color:var(--white); font-size:9px; font-weight:800; letter-spacing:.12em; padding:0 14px; height:100%; text-transform:uppercase; display:flex; align-items:center; flex-shrink:0; font-family:'Poppins',sans-serif; }
+.ticker-wrap { overflow:hidden; flex:1; }
+.ticker-inner { display:flex; animation:ticker 36s linear infinite; white-space:nowrap; }
+.ticker-inner span { font-size:11px; color:rgba(255,255,255,.92); padding:0 32px; }
+.ticker-inner span::after { content:'•'; margin-left:32px; color:rgba(255,255,255,.45); }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* ══ MAIN CONTENT ══ */
-.content {
-  padding:40px 48px;
-  max-width:1200px; margin:0 auto;
-}
+.page-hero { background:linear-gradient(135deg,var(--rose-d) 0%,var(--rose) 60%,var(--rose-m) 100%); padding:48px 24px; text-align:center; color:var(--white); margin-bottom:40px; }
+.page-hero h1 { font-family:'Poppins',sans-serif; font-size:clamp(24px,4vw,42px); font-weight:800; margin-bottom:10px; }
+.page-hero p { font-size:clamp(13px,1.5vw,17px); opacity:.85; max-width:680px; margin:0 auto; line-height:1.6; }
 
-/* ══ HERO SECTION ══ */
-.hero {
-  background:linear-gradient(135deg, #fff5f6 0%, #ffe8e8 100%);
-  border-radius:var(--radius); padding:48px; position:relative; overflow:hidden;
-  box-shadow:var(--shadow-sm); margin-bottom:40px;
-}
-.hero::before {
-  content:''; position:absolute; top:-50%; right:-10%; width:400px; height:400px;
-  background:radial-gradient(circle, rgba(224,109,119,.08) 0%, transparent 70%);
-  border-radius:50%;
-}
-.hero-content { position:relative; z-index:2; }
-.hero h1 {
-  font-family:'Poppins',sans-serif; font-size:36px; font-weight:800;
-  color:var(--rose-d); margin-bottom:16px; line-height:1.2;
-}
-.hero p { font-size:16px; color:var(--ink-s); line-height:1.8; }
+.page-content { max-width:1100px; margin:0 auto; padding:0 24px 60px; }
 
-/* ══ SECTIONS ══ */
-.section {
-  margin-bottom:48px;
-}
-.section h2 {
-  font-family:'Poppins',sans-serif; font-size:24px; font-weight:800;
-  color:var(--ink); margin-bottom:24px; text-transform:uppercase;
-  letter-spacing:.04em; position:relative; padding-bottom:16px;
-}
-.section h2::after {
-  content:''; position:absolute; bottom:0; left:0; width:60px; height:4px;
-  background:var(--rose); border-radius:2px;
-}
+.section-head { display:flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-size:18px; font-weight:800; color:var(--rose-d); margin-bottom:18px; }
+.section-head::before { content:''; width:4px; height:22px; background:var(--rose); border-radius:2px; flex-shrink:0; }
 
-/* ══ DEPARTMENT CARDS ══ */
-.dept-grid {
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:28px;
-}
+/* DEPARTMENT CARDS */
+.dept-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:18px; margin-bottom:40px; }
 .dept-card {
-  background:var(--white); border-radius:12px; overflow:hidden;
-  box-shadow:var(--shadow-sm); transition:all .18s;
-  border-top:4px solid var(--rose);
+  background:var(--white); border:1.5px solid var(--blush); border-radius:14px;
+  padding:22px 20px; position:relative; overflow:hidden;
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+  cursor:default;
 }
-.dept-card:hover {
-  transform:translateY(-8px); box-shadow:var(--shadow);
-}
-.dept-header {
-  background:linear-gradient(135deg, #fff5f6 0%, #ffe8e8 100%);
-  padding:32px 24px; text-align:center;
-}
-.dept-icon {
-  font-size:48px; margin-bottom:12px; display:block;
-}
-.dept-name {
-  font-family:'Poppins',sans-serif; font-size:18px; font-weight:800;
-  color:var(--ink); margin-bottom:8px;
-}
-.dept-tagline {
-  font-size:12px; color:var(--ink-s); font-weight:600;
-}
-.dept-body {
-  padding:24px;
-}
-.dept-description {
-  font-size:13px; color:var(--ink-s); line-height:1.7; margin-bottom:20px;
-}
-.dept-info {
-  display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;
-}
-.info-item {
-  background:var(--blush-ll); padding:12px; border-radius:8px;
-  border-left:3px solid var(--rose);
-}
-.info-label {
-  font-size:11px; font-weight:600; color:var(--ink-s); text-transform:uppercase;
-  letter-spacing:.02em; margin-bottom:4px;
-}
-.info-value {
-  font-size:14px; font-weight:700; color:var(--rose-d);
-}
-.dept-footer {
-  display:flex; gap:12px;
-}
-.btn-small {
-  flex:1; padding:10px 16px; border:none; border-radius:8px;
-  font-size:12px; font-weight:600; cursor:pointer; transition:all .18s;
-  font-family:'Poppins',sans-serif;
-}
-.btn-primary {
-  background:var(--rose); color:var(--white);
-}
-.btn-primary:hover {
-  background:var(--rose-d); transform:translateY(-2px);
-}
-.btn-secondary {
-  background:var(--blush-l); color:var(--ink-s);
-}
-.btn-secondary:hover {
-  background:var(--blush); color:var(--ink);
-}
+.dept-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--rose),var(--rose-m)); transform:scaleX(0); transform-origin:left; transition:transform .25s; }
+.dept-card:hover { border-color:var(--rose-m); box-shadow:var(--shadow); transform:translateY(-3px); }
+.dept-card:hover::after { transform:scaleX(1); }
+.dept-icon { font-size:32px; margin-bottom:10px; }
+.dept-name { font-family:'Poppins',sans-serif; font-size:14px; font-weight:800; color:var(--rose-d); margin-bottom:6px; }
+.dept-desc { font-size:12.5px; color:var(--ink-muted); line-height:1.65; margin-bottom:12px; }
+.dept-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.dept-tag { background:var(--blush); color:var(--ink-s); font-size:10px; font-weight:600; padding:3px 9px; border-radius:20px; font-family:'Poppins',sans-serif; }
+.dept-tag.ug { background:#dbeafe; color:#1d4ed8; }
+.dept-tag.pg { background:#dcfce7; color:#15803d; }
+.dept-tag.phd { background:#ede9fe; color:#7c3aed; }
 
-/* ══ BOTTOM NAV ══ */
-.bottom-nav {
-  background:var(--white); border-top:2px solid var(--blush);
-  display:flex; align-items:center; padding:0 48px; gap:8px;
-  font-size:11px; color:var(--ink-muted);
-  height:50px;
-}
-.bottom-nav a {
-  color:var(--ink-s); text-decoration:none; font-weight:600;
-  padding:5px 12px; border-radius:4px; transition:color .18s;
-}
-.bottom-nav a:hover { color:var(--rose-d); }
+/* PG / EXTRA DEPTS */
+.sub-title { font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:var(--ink-muted); margin-bottom:14px; letter-spacing:.04em; text-transform:uppercase; }
 
-/* ══ FOOTER ══ */
-footer {
-  background:var(--ink); color:var(--white); padding:24px 48px;
-  font-size:11px; display:flex; align-items:center; justify-content:space-between;
-  flex-wrap:wrap; gap:16px; font-weight:500;
+footer { background:var(--white); display:flex; align-items:center; justify-content:space-between; padding:0 22px; gap:10px; min-height:68px; border-top:2px solid var(--blush); flex-wrap:wrap; }
+.f-brand { display:flex; align-items:center; gap:9px; flex-shrink:0; }
+.f-brand-text strong { display:block; font-size:10.5px; font-weight:800; color:var(--ink); font-family:'Poppins',sans-serif; }
+.f-brand-text span { font-size:8.5px; color:var(--ink-muted); }
+.f-sep { width:1px; height:32px; background:var(--blush); flex-shrink:0; }
+.f-links-group { display:flex; gap:2px; flex-wrap:wrap; flex-shrink:0; }
+.f-links-group a { font-size:9.5px; color:var(--ink-s); text-decoration:none; padding:3px 7px; border-radius:5px; font-weight:500; transition:color .18s,background .18s; }
+.f-links-group a:hover { color:var(--rose); background:var(--blush-l); }
+.f-contact { display:flex; flex-direction:column; gap:2px; flex-shrink:0; }
+.f-contact span { font-size:9.5px; color:var(--ink-s); }
+.f-contact a { color:var(--ink-m); text-decoration:none; }
+.f-contact a:hover { color:var(--rose); }
+.f-socials { display:flex; gap:6px; flex-shrink:0; }
+.soc-btn { width:27px; height:27px; border-radius:6px; background:var(--blush-l); border:1px solid var(--blush); display:flex; align-items:center; justify-content:center; transition:background .18s,border-color .18s; }
+.soc-btn:hover { background:var(--blush); border-color:var(--rose-m); }
+.f-copy { font-size:8.5px; color:var(--ink-muted); flex-shrink:0; }
+
+@media(max-width:768px){
+  header { flex-wrap:wrap; padding:0 14px; height:auto; gap:8px; }
+  nav { flex-wrap:wrap; }
+  nav a { font-size:10px; padding:4px 7px; }
+  .nav-apply { display:none; }
+  .dept-grid { grid-template-columns:1fr; }
+  footer { flex-direction:column; padding:14px; gap:10px; }
+  .f-sep { display:none; }
 }
-.f-copy { order:3; flex-basis:100%; text-align:center; margin-top:12px; opacity:.8; }
-.f-brand { display:flex; align-items:center; gap:10px; }
-.f-brand img { height:32px; width:auto; }
-.f-brand-text strong { display:block; font-size:12px; font-weight:700; }
-.f-brand-text span { opacity:.8; }
-.f-sep { width:1px; height:20px; background:rgba(255,255,255,.2); }
-.f-links-group { display:flex; gap:16px; }
-.f-links-group a { color:rgba(255,255,255,.9); text-decoration:none; transition:color .18s; }
-.f-links-group a:hover { color:var(--rose); }
-.f-contact { display:flex; flex-direction:column; gap:4px; }
-.f-contact a { color:rgba(255,255,255,.9); text-decoration:none; }
-.f-socials { display:flex; gap:12px; }
-.soc-btn {
-  width:28px; height:28px; display:flex; align-items:center; justify-content:center;
-  background:rgba(255,255,255,.1); border-radius:6px; cursor:pointer;
-  transition:background .18s, transform .18s;
-}
-.soc-btn:hover { background:rgba(255,255,255,.2); transform:scale(1.1); }
-.soc-btn svg { width:16px; height:16px; }
 </style>
 </head>
 <body>
-<div class="page">
-<!-- HEADER -->
+
 <header>
-  <div class="logo-group">
-     <img src="wcelogo.png" alt="">
+  <a href="wce_homepage(2).html" class="logo-group">
+    <img src="wcelogo.png" alt="logo">
     <div class="logo-text">
-      <strong>
-WALCHAND COLLEGE OF ENGINEERING, SANGLI</strong>
-      <span>Govt-Aided Autonomous Institute  ·  Affiliated to Shivaji University  ·  Est. 1947</span>
+      <strong>WALCHAND COLLEGE OF ENGINEERING, SANGLI</strong>
+      <span>Govt-Aided Autonomous Institute &nbsp;·&nbsp; Affiliated to Shivaji University &nbsp;·&nbsp; Est. 1947</span>
     </div>
-  </div>
+  </a>
   <nav>
     <a href="wce_homepage(2).html">Home</a>
-    <a href="about.html">About Us</a>
+    <a href="about.html">About</a>
     <a href="departments.html" class="active">Departments</a>
     <a href="admissions.html">Admissions</a>
     <a href="research.html">Research</a>
-    <a href="contact.html">Contact</a>
     <a href="placements.html">Placements</a>
+    <a href="contact.html">Contact</a>
     <a href="#" class="nav-apply">Apply Now</a>
   </nav>
 </header>
 
-<!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-lbl">📢 Updates</div>
-  <div class="ticker-items">
-    <div class="ticker-item">🎉 Admissions Open for 2024-25 | 📊 100% Placement Rate Achieved</div>
-    <div class="ticker-item">🎉 Admissions Open for 2024-25 | 📊 100% Placement Rate Achieved</div>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="content">
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Our Departments</h1>
-      <p>Offering comprehensive engineering education across six specialized disciplines, each led by expert faculty and equipped with state-of-the-art facilities.</p>
-    </div>
-  </div>
-
-  <!-- DEPARTMENTS SECTION -->
-  <div class="section">
-    <h2>Academic Disciplines</h2>
-    <div class="dept-grid">
-      <!-- CSE -->
-      <div class="dept-card">
-        <div class="dept-header">
-          <span class="dept-icon">💻</span>
-          <div class="dept-name">Computer Science Engineering</div>
-          <div class="dept-tagline">Innovation in Computing</div>
-        </div>
-        <div class="dept-body">
-          <p class="dept-description">Cutting-edge curriculum covering software development, artificial intelligence, machine learning, cloud computing, and cybersecurity with hands-on industry projects.</p>
-          <div class="dept-info">
-            <div class="info-item">
-              <div class="info-label">Placement Rate</div>
-              <div class="info-value">100%</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Avg. Package</div>
-              <div class="info-value">₹12+ LPA</div>
-            </div>
-          </div>
-          <div class="dept-footer">
-            <button class="btn-small btn-primary">Learn More</button>
-            <button class="btn-small btn-secondary">Curriculum</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- IT -->
-      <div class="dept-card">
-        <div class="dept-header">
-          <span class="dept-icon">📱</span>
-          <div class="dept-name">Information Technology</div>
-          <div class="dept-tagline">Digital Solutions</div>
-        </div>
-        <div class="dept-body">
-          <p class="dept-description">Focus on IT infrastructure, web technologies, data analytics, IoT, and enterprise solutions with emphasis on emerging technologies and innovation.</p>
-          <div class="dept-info">
-            <div class="info-item">
-              <div class="info-label">Placement Rate</div>
-              <div class="info-value">98%</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Avg. Package</div>
-              <div class="info-value">₹10.5+ LPA</div>
-            </div>
-          </div>
-          <div class="dept-footer">
-            <button class="btn-small btn-primary">Learn More</button>
-            <button class="btn-small btn-secondary">Curriculum</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- MECHANICAL -->
-      <div class="dept-card">
-        <div class="dept-header">
-          <span class="dept-icon">⚙️</span>
-          <div class="dept-name">Mechanical Engineering</div>
-          <div class="dept-tagline">Engineering Innovation</div>
-        </div>
-        <div class="dept-body">
-          <p class="dept-description">Traditional and modern mechanical design, thermodynamics, manufacturing, automotive engineering, and robotics with advanced laboratory facilities.</p>
-          <div class="dept-info">
-            <div class="info-item">
-              <div class="info-label">Placement Rate</div>
-              <div class="info-value">95%</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Avg. Package</div>
-              <div class="info-value">₹8+ LPA</div>
-            </div>
-          </div>
-          <div class="dept-footer">
-            <button class="btn-small btn-primary">Learn More</button>
-            <button class="btn-small btn-secondary">Curriculum</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ELECTRICAL -->
-      <div class="dept-card">
-        <div class="dept-header">
-          <span class="dept-icon">⚡</span>
-          <div class="dept-name">Electrical Engineering</div>
-          <div class="dept-tagline">Power & Automation</div>
-        </div>
-        <div class="dept-body">
-          <p class="dept-description">Power systems, renewable energy, electrical machines, power electronics, control systems, and smart grid technologies with industry partnerships.</p>
-          <div class="dept-info">
-            <div class="info-item">
-              <div class="info-label">Placement Rate</div>
-              <div class="info-value">92%</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Avg. Package</div>
-              <div class="info-value">₹8.5+ LPA</div>
-            </div>
-          </div>
-          <div class="dept-footer">
-            <button class="btn-small btn-primary">Learn More</button>
-            <button class="btn-small btn-secondary">Curriculum</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ELECTRONICS -->
-      <div class="dept-card">
-        <div class="dept-header">
-          <span class="dept-icon">📡</span>
-          <div class="dept-name">Electronics Engineering</div>
-          <div class="dept-tagline">Technology Design</div>
-        </div>
-        <div class="dept-body">
-          <p class="dept-description">Microelectronics, digital systems, communication systems, signal processing, embedded systems, and semiconductor technology with modern labs.</p>
-          <div class="dept-info">
-            <div class="info-item">
-              <div class="info-label">Placement Rate</div>
-              <div class="info-value">92%</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Avg. Package</div>
-              <div class="info-value">₹8.5+ LPA</div>
-            </div>
-          </div>
-          <div class="dept-footer">
-            <button class="btn-small btn-primary">Learn More</button>
-            <button class="btn-small btn-secondary">Curriculum</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CIVIL -->
-      <div class="dept-card">
-        <div class="dept-header">
-          <span class="dept-icon">🏗️</span>
-          <div class="dept-name">Civil Engineering</div>
-          <div class="dept-tagline">Infrastructure Development</div>
-        </div>
-        <div class="dept-body">
-          <p class="dept-description">Structural design, transportation, geotechnical engineering, water resources, environmental engineering, and sustainable construction practices.</p>
-          <div class="dept-info">
-            <div class="info-item">
-              <div class="info-label">Placement Rate</div>
-              <div class="info-value">92%</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Avg. Package</div>
-              <div class="info-value">₹7.5+ LPA</div>
-            </div>
-          </div>
-          <div class="dept-footer">
-            <button class="btn-small btn-primary">Learn More</button>
-            <button class="btn-small btn-secondary">Curriculum</button>
-          </div>
-        </div>
-      </div>
+  <div class="ticker-lbl">📢 Notice</div>
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span>Faculty Recruitment 2025 – Applications Open Now</span>
+      <span>Admissions 2025–26 via JoSAA · CCMT · CCMN — Last Date: 30 June</span>
+      <span>Emergency Health Centre: 0233-2300383 · Ambulance: 8623056246</span>
+      <span>NAAC 'A' Grade Accreditation · NBA Accredited Programmes</span>
+      <span>Spardha 2025 – Sports Fest: Registrations Open</span>
+      <span>Convocation 2025 — March 28, WCE Auditorium, 10:00 AM</span>
+      <span>Faculty Recruitment 2025 – Applications Open Now</span>
+      <span>Admissions 2025–26 via JoSAA · CCMT · CCMN — Last Date: 30 June</span>
+      <span>Emergency Health Centre: 0233-2300383 · Ambulance: 8623056246</span>
+      <span>NAAC 'A' Grade Accreditation · NBA Accredited Programmes</span>
+      <span>Spardha 2025 – Sports Fest: Registrations Open</span>
+      <span>Convocation 2025 — March 28, WCE Auditorium, 10:00 AM</span>
     </div>
   </div>
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <span>Mumbai • Delhi • Bangalore • Pune • Sangli</span>
-  <a href="#">NIRF Ranking</a>
-  <a href="#">Campus Virtual Tour</a>
-  <a href="#">News & Events</a>
+<div class="page-hero">
+  <h1>Departments</h1>
+  <p>15 engineering and technology departments offering UG, PG, and doctoral programmes with world-class labs and faculty.</p>
 </div>
 
-<!-- FOOTER -->
+<div class="page-content">
+
+  <div class="section-head">Engineering Departments</div>
+  <div class="dept-grid">
+
+    <div class="dept-card">
+      <div class="dept-icon">🏗️</div>
+      <div class="dept-name">Civil Engineering</div>
+      <div class="dept-desc">One of the oldest and most respected departments, focusing on structural, environmental, transportation, and geotechnical engineering with modern laboratories and research facilities.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. Structures</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">⚙️</div>
+      <div class="dept-name">Mechanical Engineering</div>
+      <div class="dept-desc">Covers thermodynamics, manufacturing, design, and automation. The department has state-of-the-art CAD/CAM labs, a thermal engineering lab, and strong industry linkages.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. Design</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">⚡</div>
+      <div class="dept-name">Electrical Engineering</div>
+      <div class="dept-desc">Focuses on power systems, machines, drives, and renewable energy. Equipped with advanced power electronics labs and a strong record of research and industry projects.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. Power Systems</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">📡</div>
+      <div class="dept-name">Electronics &amp; Telecommunication</div>
+      <div class="dept-desc">Covers VLSI design, embedded systems, signal processing, and wireless communication. The department has dedicated VLSI and IoT labs with cutting-edge equipment.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. Electronics</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">💻</div>
+      <div class="dept-name">Computer Science &amp; Engineering</div>
+      <div class="dept-desc">Offers training in algorithms, data structures, AI/ML, cybersecurity, and cloud computing. Consistently ranks among the highest-demand departments with top placements.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. CSE</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">🧠</div>
+      <div class="dept-name">Artificial Intelligence and Machine Learning Engineering</div>
+      <div class="dept-desc">Specializes in machine learning processes</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. DS</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">🤖</div>
+      <div class="dept-name">Robotics and Automation</div>
+      <div class="dept-desc">Offers courses regarding building robots and automation in industrial sector</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. Chemical</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">📐</div>
+      <div class="dept-name">Information Technology</div>
+      <div class="dept-desc">Focused on software development, database management, networking, and emerging technologies. Strong industry curriculum designed in collaboration with leading IT companies.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">💡</div>
+      <div class="dept-name">Instrumentation Engineering</div>
+      <div class="dept-desc">Covers sensors, process control, biomedical instrumentation, and industrial automation. Maintains strong ties with process and pharmaceutical industries in the region.</div>
+      <div class="dept-tags"><span class="dept-tag ug">B.E.</span><span class="dept-tag pg">M.E. Instrumentation</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-head">Science &amp; Interdisciplinary Departments</div>
+  <div class="dept-grid">
+
+    <div class="dept-card">
+      <div class="dept-icon">➗</div>
+      <div class="dept-name">Applied Mathematics</div>
+      <div class="dept-desc">Offers foundational and advanced courses in mathematics for all engineering branches. Engaged in research on numerical methods, graph theory, and computational mathematics.</div>
+      <div class="dept-tags"><span class="dept-tag pg">M.Sc. Mathematics</span><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">🔭</div>
+      <div class="dept-name">Applied Physics</div>
+      <div class="dept-desc">Serves all engineering students with core physics curriculum and conducts research in condensed matter, photonics, and nanotechnology. Well-equipped physics laboratories.</div>
+      <div class="dept-tags"><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">🧬</div>
+      <div class="dept-name">Applied Chemistry</div>
+      <div class="dept-desc">Provides core chemistry education to all students and pursues research in green chemistry, nanomaterials, and polymer science. Has advanced analytical laboratory facilities.</div>
+      <div class="dept-tags"><span class="dept-tag phd">Ph.D.</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">📊</div>
+      <div class="dept-name">Management Studies (MBA)</div>
+      <div class="dept-desc">Offers a two-year MBA programme with specializations in Marketing, Finance, and Operations. Strong placement support with top corporate recruiters visiting campus.</div>
+      <div class="dept-tags"><span class="dept-tag pg">MBA</span></div>
+    </div>
+
+    <div class="dept-card">
+      <div class="dept-icon">🌐</div>
+      <div class="dept-name">MCA (Computer Applications)</div>
+      <div class="dept-desc">Three-year postgraduate programme covering full-stack development, data science, and enterprise solutions. Integrates practical projects with strong industry exposure.</div>
+      <div class="dept-tags"><span class="dept-tag pg">MCA</span></div>
+    </div>
+
+  </div>
+
+</div>
+
 <footer>
   <div class="f-brand">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="var(--rose)">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-    </svg>
     <div class="f-brand-text">
       <strong>WALCHAND COLLEGE OF ENGINEERING</strong>
-      <span>Vishrambag, Sangli – 416 415, Maharashtra</span>
+      <span>Sangli, Maharashtra – 416415</span>
     </div>
   </div>
   <div class="f-sep"></div>
   <div class="f-links-group">
     <a href="about.html">About</a><a href="departments.html">Programmes</a><a href="admissions.html">Admissions</a>
-    <a href="placements.html">Placements</a><a href="research.html">Research</a><a href="#">Campus</a><a href="#">NIRF</a><a href="#">RTI</a>
+    <a href="placements.html">Placements</a><a href="research.html">Research</a>
+    <a href="#">NIRF</a><a href="#">RTI</a>
   </div>
   <div class="f-sep"></div>
   <div class="f-contact">
     <span>📞 +91 233 230 0383</span>
-    <span>✉ <a href="mailto:info@wcemail.com">info@wcemail.com</a></span>
-  </div>
-  <div class="f-sep"></div>
-  <div class="f-socials">
-    <div class="soc-btn" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#1877F2"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.4V12h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .1 2 .1v2.3h-1.1c-1.1 0-1.4.7-1.4 1.3V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12"/></svg></div>
-    <div class="soc-btn" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#1DA1F2"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.6 8.6 0 0 1-2.73 1.05A4.28 4.28 0 0 0 11.7 9.4a12.1 12.1 0 0 1-8.8-4.46 4.28 4.28 0 0 0 1.33 5.71 4.2 4.2 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.2 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 4 3 8.6 8.6 0 0 1-5.3 1.83 12.1 12.1 0 0 0 8.29 3c7.55 0 11.68-6.25 11.68-11.68 0-.18 0-.35-.01-.53A8.3 8.3 0 0 0 22.46 6z"/></svg></div>
-    <div class="soc-btn" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg></div>
-    <div class="soc-btn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#0A66C2"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 21h4V9H3v12zM9 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H9V9z"/></svg></div>
-    <div class="soc-btn" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#FF0000"><path d="M23.5 6.2s-.2-1.6-.8-2.3c-.7-.8-1.5-.8-1.9-.9C18.1 2.8 12 2.8 12 2.8h0s-6.1 0-8.8.2c-.4.1-1.2.1-1.9.9-.6.7-.8 2.3-.8 2.3S.3 8 .3 9.7v1.6c0 1.7.2 3.5.2 3.5s.2 1.6.8 2.3c.7.8 1.6.7 2 .8 1.5.1 8.7.2 8.7.2s6.1 0 8.8-.2c.4-.1 1.2-.1 1.9-.9.6-.7.8-2.3.8-2.3s.2-1.7.2-3.5V9.7c0-1.7-.2-3.5-.2-3.5zM9.5 14.2V7.8l6.3 3.2-6.3 3.2z"/></svg></div>
+    <span>✉ <a href="mailto:wce@walchandsangli.ac.in">wce@walchandsangli.ac.in</a></span>
   </div>
   <div class="f-copy">© 2026 WCE Sangli. All rights reserved.</div>
 </footer>
+
 </body>
 </html>
